@@ -1,1 +1,1 @@
-Hallo :) was geht?
+Hallo :)
