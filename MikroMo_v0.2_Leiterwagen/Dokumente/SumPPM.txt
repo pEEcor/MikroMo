@@ -1,0 +1,7 @@
+Sequential PPM:
+
+- 7 channels ~0.9 to 2.1ms, 1.5ms neutral
+- 300us start/stop pulses; either edge can be used for triggering
+- 'v3 software only has fixed numeric sort order (0-Throttle, 1-Aileron, 2-Elevator, 3-Rudder, 4-Gear, 5-Aux1, 6-Aux2)
+- 'v2' software has options for fixed numeric and for the order to be as supplied by the Tx
+- Frame rate is 22ms
