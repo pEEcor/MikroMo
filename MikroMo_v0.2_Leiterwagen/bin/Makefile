@@ -23,10 +23,10 @@ DEVICE     = atmega8
 CLOCK      = 8000000
 
 #PROGRAMMER = -c stk500v2 -P /dev/cu.usbserial
-#PROGRAMMER = -c stk500v2 -P com5
+#PROGRAMMER = -c stk500v2 -P COM3
 PROGRAMMER = -c usbasp
 
-OBJECTS    = main.o blinkfunktionen.o memoryFunktionsabtastung.o lichtfunktionen.o doppelblitzfunktion.o log.o
+OBJECTS    = main.o blinkfunktionen.o memoryFunktionsabtastung.o lichtfunktionen.o doppelblitzfunktion.o
 FUSES      = -U hfuse:w:0xd9:m -U lfuse:w:0x24:m
 
 

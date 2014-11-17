@@ -51,16 +51,18 @@ void lichtfunktionen(uint8_t *data)
 
 void abblendlichtToggle()
 {
+    static uint8_t abblendlichtStatus = 0;
+
 	if(abblendlichtStatus == 0)
 	{
-		PORTB &= ~(1<<PB1);
+		PORTB |= (1<<PB3);
 		abblendlichtStatus = 1;
 		return;
 	}
 
 	if(abblendlichtStatus == 1)
 	{
-		PORTB |= (1<<PB1);
+		PORTB &= ~(1<<PB3);
 		abblendlichtStatus = 0;
 		return;
 	}
@@ -70,16 +72,18 @@ void abblendlichtToggle()
 
 void nebellichtToggle()
 {
+    static uint8_t nebellichtStatus = 0;
+
 	if(nebellichtStatus == 0)
 	{
-		PORTB &= ~(1<<PB2);
+		PORTB |= (1<<PB4);
 		nebellichtStatus = 1;
 		return;
 	}
 
 	if(nebellichtStatus == 1)
 	{
-		PORTB |= (1<<PB2);
+		PORTB &= ~(1<<PB4);
 		nebellichtStatus = 0;
 		return;
 	}
@@ -89,7 +93,9 @@ void nebellichtToggle()
 
 void flutlichtToggle()
 {
-	if(FlutlichtStatus == 0)
+	static uint8_t FlutlichtStatus = 0;
+
+    if(FlutlichtStatus == 0)
 	{
 		PORTB &= ~(1<<PB7);
 		FlutlichtStatus = 1;
@@ -110,7 +116,7 @@ void blinkerLinksToggle()
 {
 	if(blinkerLinksStatus == 0)
 	{
-		PORTB |= (1<<PB4);
+		PORTB &= ~(1<<PB4); // aus
 		PORTB |= (1<<PB5);
         PORTB |= (1<<PB6);
 		blinkerRechtsStatus = 0;
@@ -124,7 +130,7 @@ void blinkerLinksToggle()
 
 	if(blinkerLinksStatus == 1)
 	{
-		PORTB |= (1<<PB3);
+		PORTB &= ~(1<<PB3);   // aus
 		blinkerLinksStatus = 0;
 		return;
 	}
@@ -136,7 +142,7 @@ void blinkerRechtsToggle()
 {
 	if(blinkerRechtsStatus == 0)
 	{
-		PORTB |= (1<<PB3);
+		PORTB &= ~(1<<PB3);   //aus
 		PORTB |= (1<<PB5);
         PORTB |= (1<<PB6);
 		blinkerLinksStatus = 0;
@@ -150,7 +156,7 @@ void blinkerRechtsToggle()
 
 	if(blinkerRechtsStatus == 1)
 	{
-		PORTB |= (1<<PB4);
+		PORTB &= ~(1<<PB4);   // aus
 		blinkerRechtsStatus = 0;
 		return;
 	}
@@ -176,8 +182,8 @@ void warnblinkerToggle()
     if(warnblinkerStatus == 1)
     {
         warnblinkerStatus = 0;
-        PORTB |= (1<<PB3);
-        PORTB |= (1<<PB4);
+        PORTB &= ~(1<<PB3);
+        PORTB &= ~(1<<PB4);
         return;
     }
 }
@@ -199,8 +205,8 @@ void warnblinkerStuetzenToggle()
     if(warnblinkerStuetzenStatus == 1)
     {
         warnblinkerStuetzenStatus = 0;
-        PORTB |= (1<<PB3);
-        PORTB |= (1<<PB4);
+        PORTB &= ~(1<<PB3);
+        PORTB &= ~(1<<PB4);
         PORTB |= (1<<PB5);
         PORTB |= (1<<PB6);
         return;
@@ -224,8 +230,8 @@ void wechselblinkerStuetzenToggle()
     if(wechselblinkerStuetzenStatus == 1)
     {
         wechselblinkerStuetzenStatus = 0;
-        PORTB |= (1<<PB3);
-        PORTB |= (1<<PB4);
+        PORTB &= ~(1<<PB3);
+        PORTB &= ~(1<<PB4);
         PORTB |= (1<<PB5);
         PORTB |= (1<<PB6);
         return;

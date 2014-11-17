@@ -22,11 +22,11 @@ void blinkfunktionen()
 	{
 	    if((i == 127) || (i == 255))
 	    {
-	        PORTB &= ~(1<<PB3);
+	        PORTB |= (1<<PB1);
 	    }
 	    if((i == 63) || (i == 191))
 	    {
-	        PORTB |= (1<<PB3);
+	        PORTB &= ~(1<<PB1);
 	    }
 	}
 
@@ -34,11 +34,11 @@ void blinkfunktionen()
 	{
 	    if((i == 127) || (i == 255))
 	    {
-	        PORTB &= ~(1<<PB4);
+	        PORTB |= (1<<PB2);
 	    }
 	    if((i == 63) || (i == 191))
 	    {
-	        PORTB |= (1<<PB4);
+	        PORTB &= ~(1<<PB2);
 	    }
 	}
 
@@ -46,13 +46,13 @@ void blinkfunktionen()
     {
         if((i == 127) || (i == 255))
         {
-            PORTB &= ~(1<<PB3);
-            PORTB &= ~(1<<PB4);
+            PORTB |= (1<<PB1);
+            PORTB |= (1<<PB2);
         }
         if((i == 63) || (i == 191))
         {
-            PORTB |= (1<<PB3);
-            PORTB |= (1<<PB4);
+            PORTB &= ~(1<<PB1);
+            PORTB &= ~(1<<PB2);
         }
     }
 
@@ -60,15 +60,15 @@ void blinkfunktionen()
     {
         if((i == 127) || (i == 255))
         {
-            PORTB &= ~(1<<PB3);
-            PORTB &= ~(1<<PB4);
+            PORTB |= (1<<PB1);
+            PORTB |= (1<<PB2);
             PORTB &= ~(1<<PB5);
             PORTB &= ~(1<<PB6);
         }
         if((i == 63) || (i == 191))
         {
-            PORTB |= (1<<PB3);
-            PORTB |= (1<<PB4);
+            PORTB &= ~(1<<PB1);
+            PORTB &= ~(1<<PB2);
             PORTB |= (1<<PB5);
             PORTB |= (1<<PB6);
 
@@ -79,15 +79,15 @@ void blinkfunktionen()
     {
         if((i == 127) || (i == 255))
         {
-            PORTB &= ~(1<<PB3);
-            PORTB |= (1<<PB4);
+            PORTB |= (1<<PB1);
+            PORTB &= ~(1<<PB2);
             PORTB &= ~(1<<PB5);
             PORTB |= (1<<PB6);
         }
         if((i == 63) || (i == 191))
         {
-            PORTB |= (1<<PB3);
-            PORTB &= ~(1<<PB4);
+            PORTB &= ~(1<<PB1);
+            PORTB |= (1<<PB2);
             PORTB |= (1<<PB5);
             PORTB &= ~(1<<PB6);
         }

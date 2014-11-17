@@ -99,7 +99,8 @@ void InitLicht()
 {
     // Lichtleitungen auf Ausgang
     DDRB  |= (1<<PB1) | (1<<PB2) | (1<<PB3) | (1<<PB4) | (1<<PB5) | (1<<PB6) | (1<<PB7);
-    PORTB |= (1<<PB1) | (1<<PB2) | (1<<PB3) | (1<<PB4) | (1<<PB5) | (1<<PB6) | (1<<PB7);
+    PORTB &= ~(1<<PB1) &~(1<<PB2) &~(1<<PB3) &~(1<<PB4);
+    PORTB |= (1<<PB5) | (1<<PB6) | (1<<PB7);
     DDRD  |= (1<<PD0) | (1<<PD4);
     PORTD |= (1<<PD0) | (1<<PD4);
 
@@ -263,19 +264,20 @@ int main(void)
     InitPPM();
     InitServo();
     InitLicht();
-    InitUSART();
+    //InitUSART();
     sei();  // IRQ global aktivieren
 
+    /*
     uart_putc(10);                      // Programmstart -> RS232
     uart_putc(13);
     uart_puts("Start: ");
     uart_putc(10);
     uart_putc(13);
-
+    */
 
     while(1)
     {
-        rs232_log(funktion);
+        //rs232_log(funktion);
     }
     
     return 0;
